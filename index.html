@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wingo Prediction</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚡️ WIN GO 1 MINUTE ⚡️</h1>
+        </header>
+        
+        <main>
+            <div class="period-display">
+                <span>PERIOD</span>
+                <div class="period-number" id="periodNumber">--</div>
+            </div>
+            
+            <div class="prediction-display">
+                <div class="prediction" id="predictionValue">Waiting...</div>
+            </div>
+            
+            <div class="timer-container">
+                <div class="timer" id="timer">00:00</div>
+                <div class="progress-bar">
+                    <div class="progress" id="progressBar"></div>
+                </div>
+            </div>
+            
+            <div class="animation-container">
+                <div id="startAnimation"></div>
+                <div id="finishAnimation"></div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Next prediction in: <span id="nextPredictionTime">--:--</span></p>
+        </footer>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

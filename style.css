@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6;
+    }
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0073e6, 0 0 40px #0073e6;
+    }
+}
+
+.period-display {
+    margin-bottom: 2rem;
+}
+
+.period-display span {
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.period-number {
+    font-size: 3rem;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 2px solid #0ff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.prediction-display {
+    margin-bottom: 2rem;
+}
+
+.prediction {
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.prediction.big {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    box-shadow: 0 0 15px rgba(255, 65, 108, 0.7);
+}
+
+.prediction.small {
+    background: linear-gradient(135deg, #1e9bff, #0673d6);
+    box-shadow: 0 0 15px rgba(30, 155, 255, 0.7);
+}
+
+.timer-container {
+    margin-bottom: 2rem;
+}
+
+.timer {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-family: 'Courier New', monospace;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00b4db, #0083b0);
+    transition: width 1s linear;
+}
+
+.animation-container {
+    height: 200px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+#startAnimation, #finishAnimation {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+footer {
+    margin-top: 2rem;
+    font-size: 1rem;
+}
+
+/* Admin shared styles */
+.admin-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+button {
+    padding: 10px 20px;
+    background: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #005bb5;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .period-number {
+        font-size: 2rem;
+    }
+    
+    .prediction {
+        font-size: 2rem;
+    }
+    
+    .timer {
+        font-size: 2rem;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wingo Prediction - Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <header>
+            <h1>Wingo Prediction Admin Panel</h1>
+        </header>
+        
+        <div id="loginSection" class="login-section">
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        
+        <div id="adminPanel" class="admin-panel hidden">
+            <div class="admin-section">
+                <h2>Current Settings</h2>
+                <div class="current-settings">
+                    <p>Current Period: <span id="currentPeriod">--</span></p>
+                    <p>Current Prediction: <span id="currentPrediction">--</span></p>
+                    <p>Timer Status: <span id="timerStatus">--</span></p>
+                </div>
+            </div>
+            
+            <div class="admin-section">
+                <h2>Add New Prediction</h2>
+                <form id="predictionForm">
+                    <div class="form-group">
+                        <label for="period">Period Number:</label>
+                        <input type="number" id="period" required min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="prediction">Prediction:</label>
+                        <select id="prediction" required>
+                            <option value="">Select Prediction</option>
+                            <option value="Big">Big</option>
+                            <option value="Small">Small</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="startTime">Start Time:</label>
+                        <input type="datetime-local" id="startTime" required>
+                    </div>
+                    <button type="submit">Save Prediction</button>
+                </form>
+            </div>
+            
+            <div class="admin-section">
+                <h2>Timer Controls</h2>
+                <div class="button-group">
+                    <button id="startTimer">Start Timer</button>
+                    <button id="pauseTimer">Pause Timer</button>
+                    <button id="resetTimer">Reset Timer</button>
+                </div>
+            </div>
+            
+            <div class="admin-section">
+                <h2>Animation Controls</h2>
+                <div class="button-group">
+                    <button id="triggerStartAnimation">Trigger Start Animation</button>
+                    <button id="triggerFinishAnimation">Trigger Finish Animation</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/admin.js"></script>
+</body>
+</html>
